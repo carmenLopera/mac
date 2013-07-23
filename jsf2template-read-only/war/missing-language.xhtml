@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui" 
+          xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head><title>Missing Language</title>
+<link href="./css/styles.css" 
+      rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+
+<h:form>
+
+    <h3>DateTime</h3>
+    <p:calendar value="#{calendarBean.date1}" pattern="MM/dd/yyyy HH:mm" />
+
+    
+    
+
+    <p:commandButton value="Submit"  update="display" oncomplete="PF('dialog').show()" />
+
+    <p:dialog header="Selected Dates" widgetVar="dialog"
+                showEffect="fold" hideEffect="fold">
+
+        <h:panelGrid id="display" columns="2" cellpadding="5">
+
+            <h:outputText value="DateTime: " />
+            <h:outputText value="#{calendarBean.date1}">
+                <f:convertDateTime pattern="MM/dd/yyyy HH:mm" />
+            </h:outputText>
+
+        </h:panelGrid>
+    </p:dialog>
+
+</h:form>
+					
+
+</h:body></html>

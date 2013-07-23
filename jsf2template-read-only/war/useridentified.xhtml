@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>Welcome</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet"
+		href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap-combined.no-icons.min.css" />
+	<link rel="stylesheet"
+		href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
+	<link rel="stylesheet"
+		href="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fsocial-buttons.css" />
+	<script
+		src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fjquery.js"></script>
+	<script
+		src="https://d396qusza40orc.cloudfront.net/startup%2Fcode%2Fbootstrap.js"></script>
+	<link
+		href="http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700,300italic,400italic,500italic,700italic"
+		rel="stylesheet" type="text/css" />
+	<link
+		href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,300,400,600,700,800"
+		rel="stylesheet" type="text/css" />
+
+	<link rel="stylesheet"
+		href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	<script>
+		$(function() {
+			$("#formChallenge\\:when").datepicker();
+		});
+	</script>
+
+
+</h:head>
+<h:body>
+
+	<h1 class="title">Welcome to Gambetr</h1>
+	<h2>Challenges</h2>
+	<p>Here will be a list of on current challenges / challenges with a
+		button next to join the challenge selected button to create challenge
+		------------------------- id / date / media / bet b</p>
+
+	<legend>Create a challenge</legend>
+	<h:form id="formChallenge">
+		<fieldset>
+			Nickname:
+			<h:inputText value="#{challenge.nickname}" />
+			<br /> Bet:
+			<h:inputText value="#{challenge.bet}" />
+			<br /> when:
+			<h:inputText id="when" value="${challenge.when}" />
+			<h:commandButton value="Challenge" action="#{challenge.create}" />
+			<p>here it will be a date</p>
+		</fieldset>
+
+		<fieldset>
+			<legend>Join a challenge</legend>
+			<p>this list shows challenges available</p>
+			<h:commandButton value="Available"
+				action="#{challenge.ListAvailableChallenges}" />
+		</fieldset>
+
+	</h:form>
+
+
+
+</h:body>
+</html>
